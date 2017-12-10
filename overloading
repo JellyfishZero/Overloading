@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#define PI 3.14
 
 using namespace std;
 
@@ -7,14 +8,13 @@ class Circle {
 private:
 	double r;
 	double area;
-	const double pi = 3.14;
 public:
 	Circle() {
 		r = 1;
-		area = r*r*pi;
+		area = r*r*PI;
 	}
 	Circle(double getR) : r(getR) {
-		area = r*r*pi;
+		area = r*r*PI;
 	}
 	Circle & Circle::operator=(const Circle & getCircle) {
 		r = getCircle.r;
@@ -23,7 +23,7 @@ public:
 	}
 	Circle Circle::operator+(Circle getCircle) {
 		double totalArea = area + getCircle.area;
-		double newR = sqrt(totalArea / pi);
+		double newR = sqrt(totalArea / PI);
 		Circle newCircle(newR);
 		return newCircle;
 	}
